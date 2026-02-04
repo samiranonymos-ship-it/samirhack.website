@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أكاديمية SAMIR التقنية</title>
+    <style>
+        /* إعدادات الخلفية والإضاءة الحمراء */
+        body {
+            background-color: #050000;
+            color: #ff0000;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-shadow: inset 0 0 150px #4b0000;
+        }
+
+        /* الهيدر واسم SAMIR */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: rgba(20, 0, 0, 0.95);
+            border-bottom: 2px solid #ff0000;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .user-name {
+            font-size: 24px;
+            color: #ff0000;
+            font-weight: 900;
+            text-shadow: 0 0 15px #ff0000;
+        }
+
+        /* إعدادات اللغة الحقيقية */
+        .lang-select {
+            background: #1a0000;
+            color: #ff0000;
+            border: 1px solid #ff0000;
+            padding: 5px 12px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 900px; /* تقليل العرض لجعل المحتوى متوسطاً */
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        /* الصور بألوان طبيعية */
+        .hacker-gallery img {
+            width: 250px;
+            height: 180px;
+            object-fit: cover;
+            border: 2px solid #ff0000;
+            border-radius: 10px;
+            margin: 10px;
+        }
+
+        /* الفيديو متوسط الحجم */
+        .video-card {
+            background: rgba(30, 0, 0, 0.85);
+            border: 1px solid #ff0000;
+            border-radius: 15px;
+            margin: 40px auto;
+            padding: 20px;
+            max-width: 700px; /* حجم متوسط للفيديو */
+        }
+
+        iframe {
+            width: 100%;
+            height: 380px; /* ارتفاع متوسط */
+            border-radius: 8px;
+            border: none;
+        }
+
+        /* الوصف باللون الأبيض وخط غليظ */
+        .description {
+            font-size: 22px; 
+            font-weight: 900; 
+            margin-top: 20px;
+            color: #ffffff; /* اللون أبيض كما طلبت */
+            text-shadow: 2px 2px 10px #ff0000; /* ظل أحمر لإبراز النص الأبيض */
+            line-height: 1.4;
+        }
+
+        /* قسم الأدوات */
+        .tools-section {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .tool-box {
+            background: #1a0000;
+            border: 1px solid #ff0000;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .tool-box:hover {
+            background: #ff0000;
+            color: #000;
+        }
+
+        /* فوتر FROM ZERO TO HERO */
+        footer {
+            text-align: center;
+            padding: 40px;
+            margin-top: 50px;
+        }
+
+        .hero-text {
+            font-size: 14px; /* حجم صغير */
+            font-weight: 900; /* خط غليظ */
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: colorShift 3s infinite alternate;
+        }
+
+        @keyframes colorShift {
+            0% { color: #ff0000; }
+            50% { color: #ffffff; }
+            100% { color: #880000; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="user-name">SAMIR</div>
+    <select class="lang-select" onchange="changeLanguage(this.value)">
+        <option value="ar">العربية</option>
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+    </select>
+</header>
+
+<div class="container">
+    <h1 id="mainTitle" style="text-shadow: 0 0 10px red;">أرشيف SAMIR للتعلم التقني</h1>
+
+    <div class="hacker-gallery">
+        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b" alt="Security">
+        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3" alt="Hacker">
+    </div>
+
+    <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/JF0ovV3U2Ek" allowfullscreen></iframe>
+        <p class="description" id="desc1">احتراف الاختراق الأخلاقي: طريقك المختصر من الصفر نحو القمة!</p>
+    </div>
+
+    <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/YxLjf26vVFo" allowfullscreen></iframe>
+        <p class="description" id="desc2">كورس كالي لينكس المتقدم: أدوات الهكرز التي لا يخبرك عنها أحد!</p>
+    </div>
+
+    <div class="tools-section">
+        <div class="tool-box">Metasploit</div>
+        <div class="tool-box">Nmap</div>
+        <div class="tool-box">Burp Suite</div>
+    </div>
+</div>
+
+<footer>
+    <div class="hero-text">FROM ZERO TO HERO</div>
+</footer>
+
+<script>
+    function changeLanguage(lang) {
+        const translations = {
+            ar: {
+                title: "أرشيف SAMIR للتعلم التقني",
+                desc1: "احتراف الاختراق الأخلاقي: طريقك المختصر من الصفر نحو القمة!",
+                desc2: "كورس كالي لينكس المتقدم: أدوات الهكرز التي لا يخبرك عنها أحد!",
+                dir: "rtl"
+            },
+            en: {
+                title: "SAMIR Technical Learning Archive",
+                desc1: "Master Ethical Hacking: Your shortcut from zero to hero!",
+                desc2: "Advanced Kali Linux Course: Hacker tools nobody tells you about!",
+                dir: "ltr"
+            },
+            fr: {
+                title: "Archives d'apprentissage SAMIR",
+                desc1: "Maîtrisez le hacking éthique : votre raccourci de zéro à héros !",
+                desc2: "Cours Kali Linux avancé : les outils de hacker dont personne ne vous parle !",
+                dir: "ltr"
+            }
+        };
+
+        const t = translations[lang];
+        document.getElementById('mainTitle').innerText = t.title;
+        document.getElementById('desc1').innerText = t.desc1;
+        document.getElementById('desc2').innerText = t.desc2;
+        document.body.dir = t.dir;
+    }
+</script>
+
+</body>
+</html>
